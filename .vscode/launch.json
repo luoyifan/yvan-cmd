@@ -10,8 +10,8 @@
             "request": "launch",
             "args": [
               "${workspaceRoot}/src/main.ts",
-              "../../server",
-              "../../ui-src"
+              "../server",
+              "../client"
             ],
             "runtimeArgs": [
               "--nolazy",
