@@ -15,7 +15,7 @@ export default class ProjectService {
         return this.projectDao.selectAll();
     }
 
-    insertTest() {
+    insertTest(): number {
         const p = new Project();
         p.projectId = 10002;
         p.framworkId = "1002";
@@ -25,7 +25,7 @@ export default class ProjectService {
         return this.projectDao.insert(p);
     }
 
-    insertBatchTest() {
+    insertBatchTest(): number {
         const p = new Project();
         p.projectId = 10000;
         p.framworkId = "100"
@@ -47,22 +47,13 @@ export default class ProjectService {
         return this.projectDao.insertBatch(list);
     }
 
-    esQuery() {
-        return Server.esQuery('/_search', {
-            "size": 0,
-            "query": {
-                "match_all": {}
-            },
-        });
-    }
-
-    updateTest() {
+    updateTest(): number {
         const p = new Project();
         p.projectId = 10000;
-        p.projectName="测试update2"
+        p.projectName = "测试update2"
         return this.projectDao.updateById(p);
     }
-    delete() {
+    delete(): number {
         const p = new Project();
         p.projectId = 10000;
         return this.projectDao.daoDeleteById(p);
